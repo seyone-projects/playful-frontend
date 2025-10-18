@@ -95,7 +95,7 @@ const Footer = () => {
             <ul className="list-unstyled">
               <li>
                 <a
-                  href="http://playfull-trainer.s3-website.ap-south-1.amazonaws.com/"
+                  href="https://trainer.playfulpencil.in/"
                   className="text-muted text-decoration-none"
                   target="_blank"
                 >
@@ -104,7 +104,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="http://playfull-student.s3-website.ap-south-1.amazonaws.com/"
+                  href="https://student.playfulpencil.in/"
                   className="text-muted text-decoration-none"
                   target="_blank"
                 >

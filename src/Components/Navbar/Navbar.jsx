@@ -162,8 +162,8 @@ const Navbar = () => {
                 Sign In
               </Link>
               <ul className="dropdown-menu">
-                <li><Link to="http://playfull-trainer.s3-website.ap-south-1.amazonaws.com/" target="_blank">Tutor Login</Link></li>
-                <li><Link to="http://playfull-student.s3-website.ap-south-1.amazonaws.com/" target="_blank">Leaner Login</Link></li>
+                <li><Link to="https://trainer.playfulpencil.in/" target="_blank">Tutor Login</Link></li>
+                <li><Link to="https://student.playfulpencil.in/" target="_blank">Leaner Login</Link></li>
               </ul>
             </li>
 
