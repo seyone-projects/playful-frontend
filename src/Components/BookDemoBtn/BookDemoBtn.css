@@ -1,0 +1,35 @@
+.book-demo {  
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 33rem;
+  right: 2rem;
+  background: linear-gradient(135deg, #ff8c00, #e07b00); /* Gradient background */
+  box-shadow: 0 8px 15px rgba(253, 161, 23, 0.9);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: none;
+  z-index: 100;
+}
+.book-demo:hover {
+  background-color: #e07b00; 
+}
+
+.book-demo:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .book-demo {
+    top: 85%;
+    right: 1rem;
+  }
+}

@@ -1,0 +1,137 @@
+.mentor-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.mentor-section__image-container {
+  position: relative;
+}
+
+.mentor-section__image {
+  transition: transform 0.3s ease;
+  animation: float 6s ease-in-out infinite;
+}
+
+.mentor-section__image:hover {
+  transform: translateY(-5px);
+}
+
+.mentor-section__blob-shape {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(
+    135deg,
+    rgba(52, 152, 219, 0.1),
+    rgba(44, 62, 80, 0.1)
+  );
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  z-index: -1;
+}
+
+.mentor-stats {
+  position: absolute;
+  bottom: 30px;
+  right: -30px;
+  min-width: 150px;
+}
+
+.mentor-stats__number {
+  font-weight: 600;
+  color: #007bff;
+}
+
+.mentor-content__title {
+  background: linear-gradient(90deg, #f25757, #d63030);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mentor-features__item {
+  transition: transform 0.3s ease;
+}
+
+.mentor-features__item:hover {
+  transform: translateX(10px);
+}
+
+.mentor-features__icon {
+  color: #007bff;
+}
+
+.mentor-cta__primary {
+ border: 1px solid #f25757 !important;
+ color: #f25757;
+  border: none;
+  background:#fff;
+  padding: 12px 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mentor-cta__primary:hover {
+  color: #f8f9fa;
+  background: linear-gradient(90deg, #f25757, #d63030);
+}
+
+.mentor-cta__secondary {
+  border: 1px solid #f25757 !important;
+  color: #f25757;
+  background:#fff;
+  border-width: 2px;
+  padding: 12px 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mentor-cta__secondary:hover{
+  color: #f8f9fa;
+  background: linear-gradient(90deg, #f25757, #d63030);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 991px) {
+  .mentor-content {
+    text-align: center;
+  }
+
+  .mentor-features {
+    justify-content: center;
+  }
+
+  .mentor-cta {
+    justify-content: center;
+  }
+
+  .mentor-stats {
+    right: 20px;
+    bottom: -20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mentor-cta {
+    flex-direction: column;
+  }
+
+  .mentor-cta__primary,
+  .mentor-cta__secondary {
+    width: 100%;
+  }
+}

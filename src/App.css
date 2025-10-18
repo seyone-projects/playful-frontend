@@ -1,0 +1,114 @@
+:root{
+  scroll-behavior: smooth;
+  --primary: #4154f1;
+  --second: #717ff5;
+  --white-color: #e8f6d0;
+  --bgColor: #e6faee;
+  --logocolor: #85BB41;
+  --logocolor-dark: #1f3602;
+  --dark-color: #2f4858;
+
+  --app-error: #a81207;
+  --app-error-heading-text: #ffffff;
+  --app-error-message-text: #1f3602;
+  --app-error-light: #f5e0df;
+
+  --app-warning: #bd6208;
+  --app-warning-heading-text: #ffffff;
+  --app-warning-message-text: #1f3602;
+  --app-warning-light: #e8dcd1;
+
+  --app-success: #0f5425;
+  --app-success-heading-text: #ffffff;
+  --app-success-message-text: #1f3602;
+  --app-success-light: #e3faeb;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box ;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050; /* Higher than most Bootstrap elements */
+}
+
+.app-error-message .modal-header{
+  color: rgba(var(--white)) !important;
+  justify-content: center;
+  padding: 5px 20px;
+}
+
+.app-error-message .modal-header h5{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.app-error-message .modal-header .btn-close{
+  background-color: var(--white-color);
+  font-size: 6px;
+}
+
+.app-error-message .modal-header .btn-close{
+  color: rgba(var(--white)) !important;
+}
+
+.app-error-message .modal-body{
+  padding: 5px 20px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.app-error-message .modal-body p{
+  margin-top: 0px !important;
+  text-align: center;
+}
+
+.app-error-message.error .modal-header{
+  background-color: var(--app-error);
+}
+
+.app-error-message.error .modal-header .modal-title{
+  color: var(--app-error-heading-text);
+}
+
+.app-error-message.error .modal-body{
+  background-color: var(--app-error-light);
+  color: var(--app-error-message-text);
+}
+
+.app-error-message.warning .modal-header{
+  background-color: var(--app-warning);
+}
+
+.app-error-message.warning .modal-header .modal-title{
+  color: var(--app-warning-heading-text);
+}
+
+.app-error-message.warning .modal-body{
+  background-color: var(--app-warning-light);
+  color: var(--app-warning-message-text);
+}
+
+.app-error-message.success .modal-header{
+  background-color: var(--app-success);
+}
+
+.app-error-message.success .modal-header .modal-title{
+  color: var(--app-success-heading-text);
+}
+
+.app-error-message.warning .modal-body{
+  background-color: var(--app-success-light);
+  color: var(--app-success-message-text);
+}

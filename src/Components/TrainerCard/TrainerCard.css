@@ -1,0 +1,243 @@
+.crd_wrap {
+  width: 20rem;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  background: #fafaf6;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.crd_wrap:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(224, 207, 207, 0.15);
+}
+
+.crd_imgbox {
+  position: relative;
+  overflow: hidden;
+  padding: 14px;
+}
+
+.crd_img {
+  height: 250px;
+  width: 100%;
+  /* object-fit:cover; */
+  background-position: center;
+  border-radius: 16px;
+}
+
+.crd_price {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.crd_oldp {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 8px;
+  font-size: 0.9rem;
+}
+
+.crd_newp {
+  color: #ff4646;
+  font-weight: bold;
+}
+
+.crd_auth {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.crd_icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  color: #666;
+}
+
+.crd_name {
+  color: #666;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.crd_body {
+  padding: 1.25rem;
+}
+
+.crd_title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.crd_meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.crd_item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.crd_item i {
+  color: #666;
+}
+
+.crd_foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.crd_rate {
+  color: #555;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.crd_rate i {
+  color: #ffc107;
+}
+
+.crd_btn {
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: #ff4646;
+  color: white;
+  border: none;
+}
+
+.crd_btn:hover {
+  transform: scale(1.05);
+}
+
+/* Tablets and smaller desktops */
+@media (max-width: 1200px) {
+  .crd_wrap {
+    width: 18rem;
+  }
+  .crd_title {
+    font-size: 1rem;
+  }
+
+  .crd_body {
+    padding: 1rem;
+  }
+
+  .crd_btn {
+    padding: 6px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .row {
+    gap: 20px 0;
+    align-items: center;
+  }
+
+  .crd_img {
+    height: 180px;
+  }
+
+  .crd_meta {
+    gap: 10px;
+  }
+
+  .crd_item {
+    font-size: 0.85rem;
+  }
+
+  .crd_name {
+    font-size: 0.85rem;
+  }
+}
+
+/* Large Mobile */
+@media (max-width: 768px) {
+  .crd_wrap {
+    width: 360px;
+    margin: 0 auto;
+    align-content: center; 
+  }
+
+  .crd_img {
+    height: 220px;
+  }
+
+  .crd_meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .crd_foot {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .crd_btn {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+  .crd_wrap {
+    width: 20rem; 
+    align-content: center;
+  }
+
+  .crd_img {
+    height: 180px;
+  }
+
+  .crd_body {
+    padding: 0.875rem;
+  }
+
+  .crd_title {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  .crd_icon {
+    font-size: 1.25rem;
+  }
+
+  .crd_name,
+  .crd_item,
+  .crd_rate span {
+    font-size: 0.8rem;
+  }
+
+  .crd_price {
+    padding: 4px 8px;
+    font-size: 0.85rem;
+  }
+
+  .crd_oldp {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,83 @@
+.category-card-section {
+  padding: 2rem 0;
+}
+
+.category-card-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.category-card-tabs {
+  margin-bottom: 2rem;
+}
+
+.category-card-tab-btn {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.category-card-tab-btn:hover {
+  background-color: #f76c6c;
+  border: none;
+  color: #fff;
+}
+
+.category-card-tab-active {
+  background-color: #f76c6c;
+  color: #fff;
+  border: none;
+}
+
+.category-card-item {
+  padding: 1rem;
+}
+
+.category-card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-card-image {
+  height: 200px;
+  object-fit: cover;
+}
+
+.category-card-body {
+  padding: 0.8rem 1rem;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.category-card-job-title {
+  font-size: 1rem;
+  color: #333;
+}
+
+.category-card-job-badge {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.category-card-no-jobs {
+  font-size: 1.2rem;
+  color: #999;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .category-card-tab-btn{
+    font-size: 0.75rem;
+    padding: 5px;
+  }
+}

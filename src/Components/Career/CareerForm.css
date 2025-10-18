@@ -1,0 +1,124 @@
+.left-side-col {
+  background: #fbe7e6;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 20px;
+  overflow: auto;
+}
+.right-side-col {
+  flex: 1;
+}
+
+@media (max-width: 767px) {
+  .right-column {
+    margin: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
+.register-page {
+  display: grid;
+  grid-template-columns: 1fr;  
+  gap: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.single_page_container {
+  position: relative;
+  background-image: url("../../assets/images/hero_banner.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 0;
+  padding-top: 100px;
+}
+.single-page-course {
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.single-course-header {
+  color: #ffff;
+}
+
+.single-course-span {
+  color: #ffff;
+  background-color: #f25757;
+}
+.instructor-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.badge {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+.accordion-item {
+  border: none;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-button {
+  font-size: 1rem;
+}
+
+.accordion-body {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.instructor-photo {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.instructor-bio {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.course-header {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 0;
+  border-radius: 16px;
+  background-color: #d0d0d0;
+}
+
+.course-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.course-header > * {
+  position: relative;
+  z-index: 2;
+}
+
+.accordion-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+

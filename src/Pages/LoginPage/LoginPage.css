@@ -1,0 +1,55 @@
+.left-side {
+  height: 100vh !important;
+  position: sticky !important;
+  top: 0 !important;
+  background: #fbe7e6;
+  padding: 3rem 0;
+}
+.form-control:focus {
+  outline: 2px solid #ff5364 !important;
+  border: none;
+  box-shadow: none;
+}
+.login-form {
+  display: grid;
+  grid-template-columns: 1fr;  
+  gap: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.form-control:active {
+  outline: 2px solid #ff5364 !important;
+  box-shadow: none;
+}
+.form-group label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #455a64;
+  margin-bottom: 0.75rem;
+}
+.create-txt {
+  color: #ff5364 !important;
+  text-decoration: none;
+}
+.btn-login {
+  padding: 8px 50px !important;
+  margin: 0 auto;
+  background: #ff5364 !important;
+  color: #fff;
+  display: block;
+  width: fit-content;
+}
+
+.btn-login:hover {
+  color: #fff !important  ;
+}
+@media (max-width: 767px) {
+  .right-column {
+    margin: 10rem 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}

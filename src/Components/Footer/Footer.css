@@ -1,0 +1,15 @@
+.instructor-footer{
+    padding-left: 5rem;
+  }
+  .student-footer {
+    padding-left: 5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .instructor-footer {
+      padding-left: 12px;
+    }
+    .student-footer {
+      padding-left: 12px;
+    }
+  }

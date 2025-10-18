@@ -1,0 +1,87 @@
+.top-category-btn {
+  border: 1px solid #f25757;
+  align-items: center;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 25px;
+  color: #f25757;
+}
+.top-category-btn:hover {
+  background-color: #f25757;
+  border: none;
+  color: #ffff;
+}
+
+.fav-course {
+  color: #f25757;
+}
+
+.category-slider .swiper-custom {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.category-slider .slider-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-slider .slider-card:hover {
+  background: #413655;
+  color: #ffff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.category-slider .slider-icon {
+  height: 120px;
+  width: auto;
+  margin: 30px auto 0;
+  display: block;
+}
+
+.category-slider .card-body {
+  padding:20px;
+}
+
+.category-slider .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.category-slider .card-text {
+  font-size: 0.9rem;
+}
+
+/* Pagination Dots */
+.swiper-custom .swiper-pagination {
+  margin-top: 0.5rem;
+  bottom: 0px;
+}
+
+.swiper-custom .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #f0adad;
+  opacity: 0.6;
+  margin: 0 5px;
+  transition: opacity 0.3s, background-color 0.3s;
+}
+
+.swiper-custom .swiper-pagination-bullet:hover {
+  width: 40px;
+  height: 12px;
+  border-radius: 40px;
+  transition: 0.4s ease-in-out;
+  background-color: #f25757;
+  opacity: 1;
+}
+.swiper-custom .swiper-pagination-bullet-active {
+  width: 40px;
+  height: 12px;
+  border-radius: 40px;
+  transition: 0.4s ease-in-out;
+  background-color: #f25757;
+  opacity: 1;
+}
