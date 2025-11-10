@@ -1,21 +1,17 @@
 // src/config.js
 const applicationMode = "development";
 var appName = "Playful Pencil";
-var apiUrl = "http://localhost:5000/api/";
+var apiUrl = "https://api.playfulpencil.in/api/";
 var pageSize = 10;
 var logo = "/logo.png";
-var imageBasePath = "http://localhost:5000/uploads";
+var imageBasePath = "https://api.playfulpencil.in/api/uploads";
 
 if (applicationMode === 'development') {
   appName = "Playful Pencil";
   
-  //local
-  apiUrl = "http://localhost:5000/api/"; 
-  imageBasePath = "http://localhost:5000/uploads";  
-
   //server
-  //apiUrl = "http://13.53.39.107/api/";
-  //imageBasePath = "http://13.53.39.107/uploads";
+  apiUrl = "https://api.playfulpencil.in/api/";
+  imageBasePath = "https://api.playfulpencil.in/api/uploads";
   
 }
 const config = {

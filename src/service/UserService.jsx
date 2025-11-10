@@ -93,7 +93,7 @@ const GetUsersByRole = async (role, page, limit) => {
         console.error(error);
         return {
             status: 400,
-            message: error.response?.data?.message || "Something went wrong"
+            message: error.response?.data?.message
         };
     }
 };

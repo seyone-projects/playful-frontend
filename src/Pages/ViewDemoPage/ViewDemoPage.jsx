@@ -86,10 +86,6 @@ const ViewDemoPage = () => {
         setAppError(true);
         setAppErrorMessage("No State Found.");
       }
-    } catch (error) {
-      setAppError(true);
-      setAppErrorMessage("Error loading master data");
-      setAppErrorMode("Error");
     } finally {
       setIsLoading(false);
     }
@@ -109,10 +105,6 @@ const ViewDemoPage = () => {
         setAppError(true);
         setAppErrorMessage("No Section Found.");
       }
-    } catch (error) {
-      setAppError(true);
-      setAppErrorMessage("Error loading master data");
-      setAppErrorMode("Error");
     } finally {
       setIsLoading(false);
     }
@@ -132,11 +124,7 @@ const ViewDemoPage = () => {
         setAppError(true);
         setAppErrorMessage("No Category Found.");
       }
-    } catch (error) {
-      setAppError(true);
-      setAppErrorMessage("Error loading master data");
-      setAppErrorMode("Error");
-    } finally {
+    }  finally {
       setIsLoading(false);
     }
   };
@@ -155,11 +143,7 @@ const ViewDemoPage = () => {
         setAppError(true);
         setAppErrorMessage("No Subcategory Found.");
       }
-    } catch (error) {
-      setAppError(true);
-      setAppErrorMessage("Error loading master data");
-      setAppErrorMode("Error");
-    } finally {
+    }  finally {
       setIsLoading(false);
     }
   };
@@ -178,10 +162,6 @@ const ViewDemoPage = () => {
         setAppError(true);
         setAppErrorMessage("No Course Found.");
       }
-    } catch (error) {
-      setAppError(true);
-      setAppErrorMessage("Error loading master data");
-      setAppErrorMode("Error");
     } finally {
       setIsLoading(false);
     }
@@ -204,9 +184,6 @@ const ViewDemoPage = () => {
         setAppError(true);
         setAppErrorMessage("No Instructors Found for this Course.");
       }
-    } catch (error) {
-      setAppError(true);
-      setAppErrorMessage("Failed to load instructors for selected course.");
     } finally {
       setIsLoading(false);
     }

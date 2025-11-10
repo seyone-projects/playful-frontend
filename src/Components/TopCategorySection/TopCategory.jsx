@@ -35,22 +35,18 @@ const TopCategory = () => {
       const categoriesData = (response.categories || []).filter(category => category.status === "active");
       setCategories(categoriesData);
 
-      // Fetch course counts for each active category
       const counts = {};
       await Promise.all(
         categoriesData.map(async (category) => {
           const res = await GetByCategoryId(category._id);
-          // Backend returns totalItems
           counts[category._id] = res?.totalItems || 0;
         })
       );
       setCourseCounts(counts);
-
     } finally {
       setIsLoading(false);
     }
   };
-
 
   useEffect(() => {
     fetchCategoryList();
@@ -60,50 +56,58 @@ const TopCategory = () => {
     <div className="container category-slider">
       {/* Section Header */}
       <div className="row align-items-center mb-4">
-        <div className="col-md-8 mb-2">
+        <div className="col-md-12 mb-2">
           <p className="fav-course mb-1 fs-6 fw-bold">Favourite Course</p>
           <h2 className="fw-bold my-2">Top Category</h2>
           <p className="text-muted">
             Language is the key that unlocks a world of endless possibilities. Embrace the journey of foreign language learning, and watch as doors to new cultures, friendships, and opportunities swing wide open before you.
           </p>
         </div>
-        <div className="col-md-4 text-md-end">
-          <Link to="/category" className=" text-decoration-none top-category-btn">All Categories</Link>
+        <div className="col-md-4 text-md-end d-none">
+          <Link to="/category" className="text-decoration-none top-category-btn">
+            All Categories
+          </Link>
         </div>
       </div>
 
-      <Swiper
-        spaceBetween={30}
-        slidesPerView={1}
-        breakpoints={{
-          640: { slidesPerView: 1, spaceBetween: 20 },
-          768: { slidesPerView: 3, spaceBetween: 30 },
-          1024: { slidesPerView: 4, spaceBetween: 40 },
-        }}
-        pagination={{ clickable: true }}
-        modules={[Pagination]}
-        className="swiper-custom"
-      >
-        {categories.map((category, index) => (
-          <SwiperSlide key={index}>
-            <Link to={`/category`} className="text-decoration-none">
-              <div className="card slider-card shadow-sm my-3 mx-1">
-                <img
-                  src={`${config.imageBasePath}/categorys/${category._id}.${category.image}`}
-                  alt={category.name}
-                  className="card-img-top slider-icon"
-                />
-                <div className="card-body text-center">
-                  <h5 className="card-title">{category.name}</h5>
-                  <p className="card-text">
-                    {courseCounts[category._id] || 0} Courses
-                  </p>
+      {categories.length > 0 ? (
+        <Swiper
+          spaceBetween={30}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 1, spaceBetween: 20 },
+            768: { slidesPerView: 3, spaceBetween: 30 },
+            1024: { slidesPerView: 4, spaceBetween: 40 },
+          }}
+          pagination={{ clickable: true }}
+          modules={[Pagination]}
+          className="swiper-custom"
+        >
+          {categories.map((category, index) => (
+            <SwiperSlide key={index}>
+              <Link to={`/category/${category?.sectionId?._id}`} className="text-decoration-none">
+                <div className="card slider-card shadow-sm my-3 mx-1">
+                  <img
+                    src={`${config.imageBasePath}/categorys/${category._id}.${category.image}`}
+                    alt={category.name}
+                    className="card-img-top slider-icon"
+                  />
+                  <div className="card-body text-center">
+                    <h5 className="card-title">{category.name}</h5>
+                    <p className="card-text">
+                      {courseCounts[category._id] || 0} Courses
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <div className="text-center">
+          <p className="text-muted mb-4">No categories are available.</p>
+        </div>
+      )}
     </div>
   );
 };

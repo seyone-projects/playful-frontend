@@ -59,12 +59,7 @@ function HeroSection() {
         setCurrentPage(response.currentPage);
         setTotalPages(response.totalPages);
         setTotalItems(response.totalItems);
-      } else {
-        setAppError(true);
-        setAppErrorTitle("Error");
-        setAppErrorMessage("No Users Found.");
-        setAppErrorMode("error");
-      }
+      } 
     } finally {
       setIsLoading(false);
     }

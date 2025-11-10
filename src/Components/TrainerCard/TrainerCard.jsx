@@ -16,8 +16,7 @@ function TrainerCard() {
   const itemsPerPage = 6; // adjust per page
 
   const fetchUsers = async (page = 1) => {
-    try {
-      setIsLoading(true);
+    try {      
       var response = await GetUsersByRole("trainer", page, itemsPerPage);
       if (response && Array.isArray(response.users)) {
         const activeUsers = response.users.filter(user => user.status === "active");
@@ -25,11 +24,6 @@ function TrainerCard() {
         setCurrentPage(response.currentPage);
         setTotalPages(response.totalPages);
         setTotalItems(response.totalItems);
-      } else {
-        setAppError(true);
-        setAppErrorTitle("Error");
-        setAppErrorMessage("No Users Found.");
-        setAppErrorMode("error");
       }
     } finally {
       setIsLoading(false);

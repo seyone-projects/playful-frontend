@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import { useGlobalContext } from "../../GlobalContext";
 import config from '../../Config';
 import "./CategoryCard.css";
