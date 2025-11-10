@@ -15,31 +15,26 @@ function TrainerCard() {
   const [totalItems, setTotalItems] = useState(0);
   const itemsPerPage = 6; // adjust per page
 
-const fetchUsers = async (page = 1) => {
-  try {
-    setIsLoading(true);
-    var response = await GetUsersByRole("trainer", page, itemsPerPage);
-    if (response && Array.isArray(response.users)) {
-      const activeUsers = response.users.filter(user => user.status === "active");
-      setUsers(activeUsers);
-      setCurrentPage(response.currentPage);
-      setTotalPages(response.totalPages);
-      setTotalItems(response.totalItems);
-    } else {
-      setAppError(true);
-      setAppErrorTitle("Error");
-      setAppErrorMessage("No Users Found.");
-      setAppErrorMode("error");
+  const fetchUsers = async (page = 1) => {
+    try {
+      setIsLoading(true);
+      var response = await GetUsersByRole("trainer", page, itemsPerPage);
+      if (response && Array.isArray(response.users)) {
+        const activeUsers = response.users.filter(user => user.status === "active");
+        setUsers(activeUsers);
+        setCurrentPage(response.currentPage);
+        setTotalPages(response.totalPages);
+        setTotalItems(response.totalItems);
+      } else {
+        setAppError(true);
+        setAppErrorTitle("Error");
+        setAppErrorMessage("No Users Found.");
+        setAppErrorMode("error");
+      }
+    } finally {
+      setIsLoading(false);
     }
-  } catch (error) {
-    setAppError(true);
-    setAppErrorTitle("Error");
-    setAppErrorMessage("Failed to load data");
-    setAppErrorMode("error");
-  } finally {
-    setIsLoading(false);
-  }
-};
+  };
 
 
   useEffect(() => {
@@ -75,7 +70,7 @@ const fetchUsers = async (page = 1) => {
                 </div>
 
                 <div className="crd_body">
-                  <h5 className="crd_title">{user.username}</h5>                 
+                  <h5 className="crd_title">{user.username}</h5>
                   <div className="crd_auth">
                     <span className="crd_name">Working from :  {user.joiningDate
                       ? (() => {

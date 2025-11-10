@@ -16,30 +16,26 @@ const Navbar = () => {
 
   const [sections, setSections] = useState([]);
 
-  const fetchSections = async (page = 1) => {
-    try {
-      var response = await GetAllSection(page, 9999, "");
-      if (response && Array.isArray(response.sections)) {
-        const activeSections = response.sections.filter(section => section.status === "active");
-        setSections(activeSections);
-        setCurrentPage(response.currentPage);
-        setTotalPages(response.totalPages);
-        setTotalItems(response.totalItems);
-      } else {
-        setAppError(true);
-        setAppErrorTitle("Error");
-        setAppErrorMessage("No Users Found.");
-        setAppErrorMode("error");
-      }
-    } catch (error) {
+const fetchSections = async (page = 1) => {
+  try {
+    var response = await GetAllSection(page, 9999, "");
+    if (response && Array.isArray(response.sections)) {
+      const activeSections = response.sections.filter(section => section.status === "active");
+      setSections(activeSections);
+      setCurrentPage(response.currentPage);
+      setTotalPages(response.totalPages);
+      setTotalItems(response.totalItems);
+    } else {
       setAppError(true);
       setAppErrorTitle("Error");
-      setAppErrorMessage("Failed to load data");
+      setAppErrorMessage("No Users Found.");
       setAppErrorMode("error");
-    } finally {
-      setIsLoading(false);
     }
-  };
+  } finally {
+    setIsLoading(false);
+  }
+};
+
 
   useEffect(() => {
     fetchSections();
@@ -162,8 +158,8 @@ const Navbar = () => {
                 Sign In
               </Link>
               <ul className="dropdown-menu">
-                <li><Link to="https://trainer.playfulpencil.in/" target="_blank">Tutor Login</Link></li>
-                <li><Link to="https://student.playfulpencil.in/" target="_blank">Leaner Login</Link></li>
+                <li><Link to="https://trainer.playfulpencil.in" target="_blank">Tutor Login</Link></li>
+                <li><Link to="https://student.playfulpencil.in" target="_blank">Learner Login</Link></li>
               </ul>
             </li>
 

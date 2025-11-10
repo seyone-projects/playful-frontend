@@ -29,15 +29,11 @@ const Footer = () => {
         setAppErrorMessage("No Pages Found.");
         setAppErrorMode("error");
       }
-    } catch (error) {
-      setAppError(true);
-      setAppErrorTitle("Error");
-      setAppErrorMessage("Failed to load data");
-      setAppErrorMode("error");
     } finally {
       setIsLoading(false);
     }
   };
+
 
   useEffect(() => {
     fetchPages();
@@ -95,7 +91,7 @@ const Footer = () => {
             <ul className="list-unstyled">
               <li>
                 <a
-                  href="https://trainer.playfulpencil.in/"
+                  href="https://trainer.playfulpencil.in"
                   className="text-muted text-decoration-none"
                   target="_blank"
                 >
@@ -104,11 +100,11 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://student.playfulpencil.in/"
+                  href="https://student.playfulpencil.in"
                   className="text-muted text-decoration-none"
                   target="_blank"
                 >
-                  Leaner Login
+                  Learner Login
                 </a>
               </li>
               <li>

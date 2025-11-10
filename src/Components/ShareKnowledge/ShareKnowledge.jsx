@@ -16,7 +16,7 @@ const ShareKnowledge = () => {
                 className="mentor-section__image img-fluid rounded-4 shadow-lg"
               />
               <div className="mentor-section__blob-shape"></div>
-              
+
               {/* Stats Card */}
               <div className="mentor-stats bg-white rounded-4 shadow-sm p-3">
                 <div className="mentor-stats__content d-flex align-items-center">
@@ -60,17 +60,22 @@ const ShareKnowledge = () => {
 
               {/* Call to Action Buttons */}
               <div className="mentor-cta d-flex gap-3">
-                <button className="mentor-cta__primary rounded-pill">
+                <Link
+                  to="/courses"
+                  className="mentor-cta__primary text-decoration-none rounded-pill d-inline-flex align-items-center"
+                >
                   Read More
                   <i className="mentor-cta__icon bi bi-arrow-right ms-2"></i>
-                </button>
-                <Link 
+                </Link>
+
+                <Link
                   to="/career"
                   className="mentor-cta__link text-decoration-none align-self-center mentor-cta__secondary rounded-pill"
                 >
-                   Become a Mentor
+                  Become a Mentor
                 </Link>
               </div>
+
             </div>
           </div>
         </div>

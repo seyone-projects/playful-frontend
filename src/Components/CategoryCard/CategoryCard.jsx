@@ -50,15 +50,11 @@ const CategoryCard = () => {
           fetchSubCategories(firstActiveCategory._id, 1);
         }
       }
-    } catch (error) {
-      setAppError(true);
-      setAppErrorTitle("Error");
-      setAppErrorMessage("Failed to load data");
-      setAppErrorMode("error");
     } finally {
       setIsLoading(false);
     }
   };
+
 
   //fetch section by id
   const fetchSectionById = async () => {
@@ -67,15 +63,11 @@ const CategoryCard = () => {
       const response = await GetById(id);
       setSection(response.section);
       setSectionName(response.section.name);
-    } catch (error) {
-      setAppError(true);
-      setAppErrorTitle("Error");
-      setAppErrorMessage("Failed to load section data");
-      setAppErrorMode("error");
     } finally {
       setIsLoading(false);
     }
   };
+
 
   const fetchSubCategories = async (categoryId, page = 1) => {
     try {
@@ -84,7 +76,7 @@ const CategoryCard = () => {
       console.log("SubCat Response:", response);
 
       // filter active subcategories only
-      const subCats = (response.subCategorys || []).filter(sub => sub.status === "active");      
+      const subCats = (response.subCategorys || []).filter(sub => sub.status === "active");
 
       setSubCategories(subCats);
       setCurrentSubPage(response.currentPage);

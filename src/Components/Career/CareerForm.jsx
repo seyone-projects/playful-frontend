@@ -47,10 +47,6 @@ function CareerForm() {
         setAppError(true);
         setAppErrorMessage('No Genders Found.');
       }
-    } catch (error) {
-      setAppError(true);
-      setAppErrorMessage('Error loading gender data');
-      setAppErrorMode('Error');
     } finally {
       setIsLoading(false);
     }
@@ -68,10 +64,6 @@ function CareerForm() {
         setAppError(true);
         setAppErrorMessage('No City Found.');
       }
-    } catch (error) {
-      setAppError(true);
-      setAppErrorMessage('Error loading master data');
-      setAppErrorMode('Error');
     } finally {
       setIsLoading(false);
     }
@@ -80,8 +72,8 @@ function CareerForm() {
   const sendForm = async (event) => {
     event.preventDefault();
 
-     //required name
-    if(!name){
+    //required name
+    if (!name) {
       setAppError(true);
       setAppErrorTitle("Error");
       setAppErrorMessage("Name is required");
@@ -91,7 +83,7 @@ function CareerForm() {
 
     if (!selectedCityId) {
       setAppError(true);
-      setAppErrorTitle("Error");  
+      setAppErrorTitle("Error");
       setAppErrorMessage("Please select a city");
       setAppErrorMode("error");
       return;
@@ -99,7 +91,7 @@ function CareerForm() {
 
     if (!selectedGenderId) {
       setAppError(true);
-      setAppErrorTitle("Error");  
+      setAppErrorTitle("Error");
       setAppErrorMessage("Please select a gender");
       setAppErrorMode("error");
       return;
@@ -149,7 +141,7 @@ function CareerForm() {
     setIsLoading(true);
 
     try {
-     const response = await SendCareerForm(name, selectedGenderId, mobile, email, whatsappNo, selectedCityId, education);
+      const response = await SendCareerForm(name, selectedGenderId, mobile, email, whatsappNo, selectedCityId, education);
 
       if (response.status === 200) {
         setAppError(true);

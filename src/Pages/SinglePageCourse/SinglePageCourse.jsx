@@ -33,15 +33,11 @@ function SinglePageCourse() {
         setCategoryId(response.course.categoryId);
         setSubCategoryIds(response.course.subCategoryIds);
       }
-    } catch (error) {
-      setAppError(true);
-      setAppErrorTitle("Error");
-      setAppErrorMessage("Failed to load data");
-      setAppErrorMode("error");
     } finally {
       setIsLoading(false);
     }
   };
+
 
   // Fetch latest batch
   const fetchLatestBatch = async () => {
@@ -58,12 +54,6 @@ function SinglePageCourse() {
         setBatchDetails({});
         return null;
       }
-    } catch (error) {
-      setAppError(true);
-      setAppErrorTitle("Error");
-      setAppErrorMessage("Failed to fetch latest batch details");
-      setAppErrorMode("error");
-      return null;
     } finally {
       setIsLoading(false);
     }
@@ -80,15 +70,11 @@ function SinglePageCourse() {
       setCurrentPage(response.currentPage || 1);
       setTotalPages(response.totalPages || 1);
       setTotalItems(response.totalItems || 0);
-    } catch (error) {
-      setAppError(true);
-      setAppErrorTitle("Error");
-      setAppErrorMessage("Failed to load lesson planners");
-      setAppErrorMode("error");
     } finally {
       setIsLoading(false);
     }
   };
+
 
   // Combined useEffect to fetch latest batch and then lesson planners
   React.useEffect(() => {

@@ -7,19 +7,19 @@ import { GetAllSection } from "../../service/SectionService";
 
 function HeroSection() {
 
-   const {
-      isLoading,
-      setIsLoading,
-      isAppError,
-      setAppError,
-      appErrorMessage,
-      setAppErrorMessage,
-      appErrorTitle,
-      setAppErrorTitle,
-      appErrorMode,
-      setAppErrorMode,
-      appUser,
-    } = useGlobalContext();
+  const {
+    isLoading,
+    setIsLoading,
+    isAppError,
+    setAppError,
+    appErrorMessage,
+    setAppErrorMessage,
+    appErrorTitle,
+    setAppErrorTitle,
+    appErrorMode,
+    setAppErrorMode,
+    appUser,
+  } = useGlobalContext();
 
   const [sections, setSections] = useState([]);
   const [searchText, setSearchText] = useState("");
@@ -65,15 +65,11 @@ function HeroSection() {
         setAppErrorMessage("No Users Found.");
         setAppErrorMode("error");
       }
-    } catch (error) {
-      setAppError(true);
-      setAppErrorTitle("Error");
-      setAppErrorMessage("Failed to load data");
-      setAppErrorMode("error");
     } finally {
       setIsLoading(false);
     }
   };
+
 
   useEffect(() => {
     fetchSections();

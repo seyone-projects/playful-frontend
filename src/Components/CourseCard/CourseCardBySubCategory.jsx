@@ -29,15 +29,11 @@ function CourseCard() {
       } else {
         setSubCategoryDetails({});
       }
-    } catch (error) {
-      setAppError(true);
-      setAppErrorTitle("Error");
-      setAppErrorMessage("Failed to fetch sub category details");
-      setAppErrorMode("error");
     } finally {
       setIsLoading(false);
     }
   };
+
 
   const fetchCourses = async (page = 1) => {
     try {

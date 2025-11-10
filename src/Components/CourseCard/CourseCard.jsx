@@ -33,15 +33,11 @@ function CourseCard() {
         setAppErrorMessage("No Users Found.");
         setAppErrorMode("error");
       }
-    } catch (error) {
-      setAppError(true);
-      setAppErrorTitle("Error");
-      setAppErrorMessage("Failed to load data");
-      setAppErrorMode("error");
     } finally {
       setIsLoading(false);
     }
   };
+
 
   useEffect(() => {
     fetchCourses(currentPage);

@@ -28,34 +28,28 @@ const TopCategory = () => {
   const [categories, setCategories] = useState([]);
   const [courseCounts, setCourseCounts] = useState({});
 
- const fetchCategoryList = async (page = 1) => {
-  try {
-    setIsLoading(true);
-    const response = await GetLatest(page, 10);
-    const categoriesData = (response.categories || []).filter(category => category.status === "active");
-    setCategories(categoriesData);
+  const fetchCategoryList = async (page = 1) => {
+    try {
+      setIsLoading(true);
+      const response = await GetLatest(page, 10);
+      const categoriesData = (response.categories || []).filter(category => category.status === "active");
+      setCategories(categoriesData);
 
-    // Fetch course counts for each active category
-    const counts = {};
-    await Promise.all(
-      categoriesData.map(async (category) => {
-        const res = await GetByCategoryId(category._id);
-        // Backend returns totalItems
-        counts[category._id] = res?.totalItems || 0;
-      })
-    );
-    setCourseCounts(counts);
+      // Fetch course counts for each active category
+      const counts = {};
+      await Promise.all(
+        categoriesData.map(async (category) => {
+          const res = await GetByCategoryId(category._id);
+          // Backend returns totalItems
+          counts[category._id] = res?.totalItems || 0;
+        })
+      );
+      setCourseCounts(counts);
 
-  } catch (error) {
-    setAppError(true);
-    setAppErrorTitle("Error");
-    setAppErrorMessage("Failed to load data");
-    setAppErrorMode("error");
-  } finally {
-    setIsLoading(false);
-  }
-};
-
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
 
   useEffect(() => {

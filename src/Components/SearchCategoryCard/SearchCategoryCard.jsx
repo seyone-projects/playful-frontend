@@ -36,9 +36,6 @@ const SearchCategoryCard = () => {
   const { searchText, sectionId } = useParams();
   const [sectionName, setSectionName] = useState("");
 
-  console.log("SearchText:", searchText);
-  console.log("SectionId:", sectionId);
-
   //fetch section by id
   const fetchSectionById = async () => {
     try {
@@ -46,15 +43,11 @@ const SearchCategoryCard = () => {
       const response = await GetById(sectionId);
       console.log("section", response);
       setSectionName(response.section.name);
-    } catch (error) {
-      setAppError(true);
-      setAppErrorTitle("Error");
-      setAppErrorMessage("Failed to load section data");
-      setAppErrorMode("error");
     } finally {
       setIsLoading(false);
     }
   };
+
 
   const fetchSubCategories = async (searchTextParam = searchText, sectionIdParam = sectionId) => {
     try {
@@ -63,7 +56,7 @@ const SearchCategoryCard = () => {
       console.log("SubCat Response:", response);
 
       // filter active subcategories only
-      const subCats = (response.subCategories || []).filter(sub => sub.status === "active");      
+      const subCats = (response.subCategories || []).filter(sub => sub.status === "active");
 
       setSubCategories(subCats);
       setCurrentSubPage(response.currentPage);
